@@ -5,6 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
@@ -18,13 +23,91 @@
 
     <!-- My CSS -->
     <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .navbar-brand {
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      .navbar-brand span {
+        color: rgb(255, 247, 0);
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
       .jumbotron {
-        padding-top: 7rem;
-        background-color: #e2edff;
+        padding-top: 6rem;
+        background-color: #8dd7d8;
+      }
+
+      .jumbotron h1 {
+        font-weight: 600;
+        font-size: 2rem;
+      }
+
+      .jumbotron p {
+        font-weight: 400;
+        font-size: 0.9rem;
+      }
+
+      #about {
+        background-color: #d5e5e5;
+      }
+
+      #about h2,
+      #gallery h2,
+      #contact h2 {
+        font-weight: 600;
+        font-size: 1.5rem;
+      }
+
+      #about h2 span,
+      #gallery h2 span,
+      #contact h2 span {
+        color: brown;
+      }
+
+      #about p,
+      #gallery p {
+        font-size: 1rem;
       }
 
       #gallery {
-        background-color: #e2edff;
+        background-color: #f1f7f7;
+      }
+
+      #gallery .card {
+        background-color: #f7cbca;
+        border-radius: 5%;
+      }
+
+      #gallery .card img {
+        border-radius: 5%;
+        /* box-shadow: 5px; */
+      }
+
+      #gallery .card .card-body a {
+        text-decoration: none;
+      }
+
+      #contact {
+        background-color: #ddd3d3;
+      }
+
+      #footer {
+        background-color: #f7cbca;
+      }
+
+      footer p {
+        font-size: 0.8rem;
+      }
+
+      footer a {
+        text-decoration: none;
+        font-size: 0.8rem;
       }
 
       section {
@@ -37,16 +120,16 @@
   </head>
   <body id="home">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm fixed-top">
       <div class="container">
-        <a class="navbar-brand">Portfolio</a>
+        <a class="navbar-brand"><span>Yazid</span> Abdul Kodir</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#home">Home</a>
+              <a class="nav-link" aria-current="page" href="#home">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#about">About</a>
@@ -70,7 +153,7 @@
       <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
-          fill="#fff"
+          fill="#d5e5e5"
           fill-opacity="1"
           d="M0,160L40,149.3C80,139,160,117,240,133.3C320,149,400,203,480,197.3C560,192,640,128,720,101.3C800,75,880,85,960,122.7C1040,160,1120,224,1200,224C1280,224,1360,160,1400,128L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
         ></path>
@@ -83,21 +166,24 @@
       <div class="container">
         <div class="row text-center mb-3">
           <div class="col">
-            <h2>About Me</h2>
+            <h2>About <span>Me</span></h2>
           </div>
         </div>
         <div class="row justify-content-center fs-5 text-center">
           <div class="col-md-4" data-aos="fade-right" data-aos-duration="1300">
-            <p>Lulusan SMK Pertiwi Ciasem dengan kompetensi jurusan Teknik Komputer dan Jaringan.</p>
+            <p>Saya Yazid Abdul Kodir, lulusan baru SMK Pertiwi Ciasem dengan jurusan Tekknik Komputer dan Jaringan tahun 2024. Memiliki hobi membaca komik, bersepeda, bermain game dan merupakan individu yang jujur dan disiplin.</p>
           </div>
           <div class="col-md-4" data-aos="fade-left" data-aos-duration="1300" data-aos-delay="500">
-            <p>Memiliki hobi membaca komik, bersepeda, bermain game dan merupakan individu yang jujur dan disiplin.</p>
+            <p>
+              memiliki pengalaman Praktek Kerja Lapangan di Kantor Pemerintah Desa Ciasem Tengah sebagai staf pelayanan masyarakat selama 3 (Tiga) bulan. Saya memiliki kemampuan yang cukup baik dalam menggunakan komputer, microsoft word,
+              dan microsoft excel
+            </p>
           </div>
         </div>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
-          fill="#e2edff"
+          fill="#f1f7f7"
           fill-opacity="1"
           d="M0,64L40,69.3C80,75,160,85,240,112C320,139,400,181,480,165.3C560,149,640,75,720,69.3C800,64,880,128,960,138.7C1040,149,1120,107,1200,101.3C1280,96,1360,128,1400,144L1440,160L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
         ></path>
@@ -110,12 +196,12 @@
       <div class="container">
         <div class="row text-center mb-3">
           <div class="col">
-            <h2>Gallery</h2>
+            <h2>Galler<span>y</span></h2>
           </div>
         </div>
         <div class="row justify-content-center">
           <div class="col-md-4 mb-3">
-            <div class="card" data-aos="zoom-in-up" data-aos-duration="1200">
+            <div class="card">
               <img src="parsel.jpg" class="card-img-top" alt="Membuat Parsel" />
               <div class="card-body">
                 <p class="card-text">Ujian praktek kewirausahaan membuat parcel, April 2024.</p>
@@ -123,7 +209,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card" data-aos="zoom-in-up" data-aos-duration="1200" data-aos-delay="100">
+            <div class="card">
               <img src="4.jpg" class="card-img-top" alt="Foto bersama teman-teman, Ceremony UjiKom" />
               <div class="card-body">
                 <p class="card-text">Ceremony pembukaan Uji Kompetensi Keahlian, Maret 2024.</p>
@@ -131,7 +217,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card" data-aos="zoom-in-up" data-aos-duration="1200" data-aos-delay="200">
+            <div class="card">
               <img src="penguji.jpg" class="card-img-top" alt="Foto bersama penguji eksternal ujikom" />
               <div class="card-body">
                 <p class="card-text">Foto bersama penguji eksternal, Maret 2024.</p>
@@ -139,7 +225,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card" data-aos="zoom-in-up" data-aos-duration="1200" data-aos-delay="300">
+            <div class="card">
               <img src="2.jpg" class="card-img-top" alt="Introducing praktek bahasa Inggris" />
               <div class="card-body">
                 <p class="card-text">Praktek mengkafani jenazah, April 2024.</p>
@@ -147,7 +233,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card" data-aos="zoom-in-up" data-aos-duration="1200" data-aos-delay="400">
+            <div class="card">
               <img src="12tkj3.jpg" class="card-img-top" alt="fotbar kelas" />
               <div class="card-body">
                 <p class="card-text">Foto bersama 12 TKJ 3, Februari 2024.</p>
@@ -155,7 +241,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card" data-aos="zoom-in-up" data-aos-duration="1200" data-aos-delay="500">
+            <div class="card">
               <img src="membuat surat.jpg" class="card-img-top" alt="membuat surat" />
               <div class="card-body">
                 <p class="card-text">Membuat surat (Praktek Kerja Lapangan), Des 2022-Mar 2023.</p>
@@ -163,7 +249,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card" data-aos="zoom-in-up" data-aos-duration="1200" data-aos-delay="600">
+            <div class="card">
               <img src="registrasi surat.jpg" class="card-img-top" alt="register surat" />
               <div class="card-body">
                 <p class="card-text">Meregistrasi surat (PKL), Des 2022-Mar 2023.</p>
@@ -171,7 +257,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card" data-aos="zoom-in-up" data-aos-duration="1200" data-aos-delay="700">
+            <div class="card">
               <img src="membuat amplop.jpg" class="card-img-top" alt="membuat amplop" />
               <div class="card-body">
                 <p class="card-text">Membuat amplop menggunakan kertas yang sudah tidak terpakai (PKL), Des 2022-Mar 2023.</p>
@@ -179,10 +265,10 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card" data-aos="zoom-in-up" data-aos-duration="1200" data-aos-delay="800">
+            <div class="card">
               <img src="baksoayam.jpg" class="card-img-top" alt="online store web" />
               <div class="card-body">
-                <p class="card-text">Online store web<a href="https://yazidabdulkodir.github.io/baksoayam/" class="text-dark fw-bold"> Bakso-Ayam</a>.</p>
+                <p class="card-text">Online store web<a href="https://yazidabdulkodir.github.io/baksoayam/" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold"> Bakso-Ayam.</a></p>
               </div>
             </div>
           </div>
@@ -190,7 +276,7 @@
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
-          fill="#ffffff"
+          fill="#ddd3d3"
           fill-opacity="1"
           d="M0,256L40,240C80,224,160,192,240,192C320,192,400,224,480,202.7C560,181,640,107,720,106.7C800,107,880,181,960,213.3C1040,245,1120,235,1200,213.3C1280,192,1360,160,1400,144L1440,128L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
         ></path>
@@ -203,7 +289,7 @@
       <div class="container">
         <div class="row text-center mb-3">
           <div class="col">
-            <h2>Contact Me</h2>
+            <h2>Contact <span>Me</span></h2>
           </div>
         </div>
         <div class="row justify-content-center">
@@ -225,8 +311,8 @@
                 <label for="pesan" class="form-label">Pesan</label>
                 <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
               </div>
-              <button type="submit" class="btn btn-primary btn-kirim">Kirim</button>
-              <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+              <button type="submit" class="btn btn-danger btn-kirim">Kirim</button>
+              <button class="btn btn-danger btn-loading d-none" type="button" disabled>
                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                 Loading...
               </button>
@@ -236,7 +322,7 @@
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
-          fill="#0d6efd"
+          fill="#f7cbca"
           fill-opacity="1"
           d="M0,192L40,202.7C80,213,160,235,240,240C320,245,400,235,480,224C560,213,640,203,720,202.7C800,203,880,213,960,224C1040,235,1120,245,1200,218.7C1280,192,1360,128,1400,96L1440,64L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
         ></path>
@@ -245,8 +331,8 @@
     <!-- Contact end -->
 
     <!-- Footer -->
-    <footer class="bg-primary text-white text-center pb-5">
-      <p>Created with <i class="bi bi-heart-fill text-danger"></i> by <a href="https://www.facebook.com/yazid.ak.54" class="text-white fw-bold">Yazid Abdul Kodir</a></p>
+    <footer class="text-dark text-center pb-5" id="footer">
+      <p>Created with <i class="bi bi-heart-fill text-danger"></i> by <a href="https://www.facebook.com/yazid.ak.54" class="text-success fw-bold">Yazid Abdul Kodir</a>. | &copy; 2024</p>
     </footer>
     <!-- Footer end -->
 
