@@ -22,98 +22,7 @@
     <!-- AOS end -->
 
     <!-- My CSS -->
-    <style>
-      * {
-        font-family: "Poppins", sans-serif;
-      }
-
-      .navbar-brand {
-        font-weight: 600;
-        font-size: 1rem;
-      }
-
-      .navbar-brand span {
-        color: rgb(255, 247, 0);
-        font-weight: 600;
-        font-size: 1rem;
-      }
-
-      .jumbotron {
-        padding-top: 6rem;
-        background-color: #8dd7d8;
-      }
-
-      .jumbotron h1 {
-        font-weight: 600;
-        font-size: 2rem;
-      }
-
-      .jumbotron p {
-        font-weight: 400;
-        font-size: 0.9rem;
-      }
-
-      #about {
-        background-color: #d5e5e5;
-      }
-
-      #about h2,
-      #gallery h2,
-      #contact h2 {
-        font-weight: 600;
-        font-size: 1.5rem;
-      }
-
-      #about h2 span,
-      #gallery h2 span,
-      #contact h2 span {
-        color: brown;
-      }
-
-      #about p,
-      #gallery p {
-        font-size: 1rem;
-      }
-
-      #gallery {
-        background-color: #f1f7f7;
-      }
-
-      #gallery .card {
-        background-color: #f7cbca;
-        border-radius: 5%;
-      }
-
-      #gallery .card img {
-        border-radius: 5%;
-        /* box-shadow: 5px; */
-      }
-
-      #gallery .card .card-body a {
-        text-decoration: none;
-      }
-
-      #contact {
-        background-color: #ddd3d3;
-      }
-
-      #footer {
-        background-color: #f7cbca;
-      }
-
-      footer p {
-        font-size: 0.8rem;
-      }
-
-      footer a {
-        text-decoration: none;
-        font-size: 0.8rem;
-      }
-
-      section {
-        padding-top: 5rem;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
     <!-- My CSS end -->
 
     <title>My Portfolio | Yazid Abdul Kodir</title>
@@ -122,7 +31,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm fixed-top">
       <div class="container">
-        <a class="navbar-brand"><span>Yazid</span> Abdul Kodir</a>
+        <a class="navbar-brand" data-aos="fade-down-right" data-aos-duration="1000" data-aos-delay="900"><span>Yazid</span> Abdul Kodir</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -171,7 +80,7 @@
         </div>
         <div class="row justify-content-center fs-5 text-center">
           <div class="col-md-4" data-aos="fade-right" data-aos-duration="1300">
-            <p>Saya Yazid Abdul Kodir, lulusan baru SMK Pertiwi Ciasem dengan jurusan Tekknik Komputer dan Jaringan tahun 2024. Memiliki hobi membaca komik, bersepeda, bermain game dan merupakan individu yang jujur dan disiplin.</p>
+            <p>Saya Yazid Abdul Kodir, lulusan baru SMK Pertiwi Ciasem dengan jurusan Teknik Komputer dan Jaringan tahun 2024. Memiliki hobi membaca komik, bersepeda, bermain game dan merupakan individu yang jujur dan disiplin.</p>
           </div>
           <div class="col-md-4" data-aos="fade-left" data-aos-duration="1300" data-aos-delay="500">
             <p>
@@ -268,7 +177,7 @@
             <div class="card">
               <img src="baksoayam.jpg" class="card-img-top" alt="online store web" />
               <div class="card-body">
-                <p class="card-text">Online store web<a href="https://yazidabdulkodir.github.io/baksoayam/" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-bold"> Bakso-Ayam.</a></p>
+                <p class="card-text">Online store web<a href="https://yazidabdulkodir.github.io/baksoayam/" class="link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover fw-medium"> Bakso-Ayam.</a></p>
               </div>
             </div>
           </div>
@@ -332,7 +241,9 @@
 
     <!-- Footer -->
     <footer class="text-dark text-center pb-5" id="footer">
-      <p>Created with <i class="bi bi-heart-fill text-danger"></i> by <a href="https://www.facebook.com/yazid.ak.54" class="text-success fw-bold">Yazid Abdul Kodir</a>. | &copy; 2024</p>
+      <p>
+        Created with <i class="bi bi-heart-fill text-danger"></i> by <a href="https://www.facebook.com/yazid.ak.54" class="text-primary fw-bold"><i class="bi bi-facebook"></i> Yazid Abdul Kodir</a>. | &copy; 2024
+      </p>
     </footer>
     <!-- Footer end -->
 
@@ -356,32 +267,6 @@
       gsap.from(".navbar", { duration: 1, y: "-100%", opacity: 0 });
     </script>
     <!-- GSAP END -->
-    <script>
-      const scriptURL = "https://script.google.com/macros/s/AKfycbxpZANhFpyTZL9hr_O4rYuFVQKy7R2mEiz_CkJ44hzLMIDj1VGox68sFHYvptmcBTgsNQ/exec";
-      const form = document.forms["yazid-contact-form"];
-      const btnKirim = document.querySelector(".btn-kirim");
-      const btnLoading = document.querySelector(".btn-loading");
-      const myAlert = document.querySelector(".my-alert");
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        // ketika tombol submit diklik
-        // tampilkan tombol loading, hilangkan tombol kirim
-        btnLoading.classList.toggle("d-none");
-        btnKirim.classList.toggle("d-none");
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            // tampilkan tombol kirim, hilangkan tombol loading
-            btnLoading.classList.toggle("d-none");
-            btnKirim.classList.toggle("d-none");
-            // tampilkan alert
-            myAlert.classList.toggle("d-none");
-            // reset formnya
-            form.reset();
-            console.log("Success!", response);
-          })
-          .catch((error) => console.error("Error!", error.message));
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

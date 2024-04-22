@@ -1,0 +1,86 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.navbar-brand span {
+  color: rgb(255, 247, 0);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.jumbotron {
+  padding-top: 6rem;
+  background-color: #8dd7d8;
+}
+
+.jumbotron h1 {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.jumbotron p {
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+#about {
+  background-color: #d5e5e5;
+}
+
+#about h2,
+#gallery h2,
+#contact h2 {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+#about h2 span,
+#gallery h2 span,
+#contact h2 span {
+  color: brown;
+}
+
+#about p,
+#gallery p {
+  font-size: 0.9rem;
+}
+
+#gallery {
+  background-color: #f1f7f7;
+}
+
+#gallery .card {
+  background-color: #f7cbca;
+  border-radius: 5%;
+}
+
+#gallery .card img {
+  border-radius: 5%;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.8);
+}
+
+#contact {
+  background-color: #ddd3d3;
+}
+
+#footer {
+  background-color: #f7cbca;
+}
+
+footer p {
+  font-size: 0.8rem;
+}
+
+footer a {
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+section {
+  padding-top: 5rem;
+}
