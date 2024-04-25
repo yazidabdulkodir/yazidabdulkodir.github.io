@@ -4,13 +4,13 @@
 
 .navbar-brand {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 .navbar-brand span {
   color: rgb(255, 247, 0);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 .jumbotron {
@@ -19,8 +19,9 @@
 }
 
 .jumbotron h1 {
+  padding-top: 0.7rem;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .jumbotron p {
