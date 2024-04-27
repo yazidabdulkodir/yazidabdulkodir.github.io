@@ -4,13 +4,13 @@
 
 .navbar-brand {
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .navbar-brand span {
   color: rgb(255, 247, 0);
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .jumbotron {
@@ -63,6 +63,10 @@
 #gallery .card img {
   border-radius: 5%;
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.8);
+}
+
+.download-btn {
+  padding-top: 1.5rem;
 }
 
 #contact {
