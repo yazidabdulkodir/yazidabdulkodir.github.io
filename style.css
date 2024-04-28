@@ -69,6 +69,11 @@
   padding-top: 1.5rem;
 }
 
+.card-text .btn a {
+  text-decoration: none;
+  color: #fff;
+}
+
 #contact {
   background-color: #ddd3d3;
 }
