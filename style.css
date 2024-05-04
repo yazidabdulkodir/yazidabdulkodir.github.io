@@ -83,10 +83,6 @@ body {
   border-radius: 5%;
 }
 
-.card:hover {
-  transform: translateY(20px);
-}
-
 .card:before {
   content: "";
   position: absolute;
