@@ -2,6 +2,11 @@
   font-family: "Poppins", sans-serif;
 }
 
+html,
+body {
+  overflow-x: hidden; /* Menghilangkan scroll horizontal */
+}
+
 .navbar-brand {
   font-weight: 600;
   font-size: 1rem;
@@ -55,27 +60,141 @@
   background-color: #f1f7f7;
 }
 
-#gallery .card {
-  background-color: #f7cbca;
+/* Kartu tetap pada layout grid sampai 3 */
+.wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Mengizinkan pembungkusan baris */
+}
+
+.card {
+  width: 280px;
+  height: 360px;
+  padding: 2rem 1rem;
+  background: #fff;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s ease-in-out;
+  margin: 0 15px 30px; /* Menambahkan margin bawah */
   border-radius: 5%;
 }
 
-#gallery .card img {
+.card:hover {
+  transform: translateY(20px);
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 176, 155, 0.5), rgba(150, 201, 61, 1));
+  z-index: 2;
+  transition: 0.5s all;
+  opacity: 0;
   border-radius: 5%;
-  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.8);
+}
+
+.card:hover:before {
+  opacity: 1;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5%;
+}
+
+.card .info {
+  position: absolute; /* Mengubah posisi menjadi absolute */
+  bottom: 30px; /* Meletakkan .info di bagian bawah */
+  left: 10px; /* Meletakkan .info di kiri */
+  right: 10px; /* Meletakkan .info di kanan */
+  z-index: 3;
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.5s all;
+}
+
+.card:hover .info {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.card .info h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.card .info p {
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 15px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.card .info .btn-card {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  border-radius: 10%;
+}
+
+.card .info .btn-card:hover {
+  background-color: yellow;
+}
+
+.disabled {
+  pointer-events: none; /* Menonaktifkan klik */
+  opacity: 0.6; /* Memberikan efek transparansi */
+  cursor: not-allowed; /* Mengubah kursor saat tidak dapat di-klik */
 }
 
 .download-btn {
+  display: flex;
+  justify-content: center;
   padding-top: 1.5rem;
 }
 
-.card-text .btn a {
-  text-decoration: none;
-  color: #fff;
+.download-btn button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi transform dan box-shadow saat hover */
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5); /* Bayangan standar */
 }
 
+.download-btn button:hover {
+  transform: scale(1.1); /* Memperbesar elemen saat dihover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5); /* Meningkatkan bayangan saat dihover */
+}
 #contact {
   background-color: #ddd3d3;
+}
+
+.custom-btn-width {
+  width: 200px; /* Sesuaikan dengan lebar yang Anda inginkan */
+  margin: 0 auto; /* Menengahkan tombol secara horizontal */
+}
+
+.spinner-border {
+  animation-duration: 0.5s; /* Ubah durasi animasi menjadi 1 detik */
 }
 
 #footer {
@@ -93,4 +212,18 @@ footer a {
 
 section {
   padding-top: 5rem;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto 30px; /* Menjadikan margin bawah tetap */
+  }
 }
