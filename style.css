@@ -151,12 +151,17 @@ body {
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.4s ease-in-out;
+  transition: 0.3s ease-in-out;
   border-radius: 10%;
 }
 
 .card .info .btn-card:hover {
   background-color: yellow;
+}
+
+body.modal-open {
+  overflow: hidden;
+  padding-right: 0 !important; /* Menambahkan padding-right: 0 */
 }
 
 .disabled {
