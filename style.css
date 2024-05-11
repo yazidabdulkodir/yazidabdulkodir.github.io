@@ -5,6 +5,7 @@
 html,
 body {
   overflow-x: hidden; /* Menghilangkan scroll horizontal */
+  /* scroll-behavior: smooth; */
 }
 
 .navbar-brand {
@@ -40,13 +41,18 @@ body {
 
 #about h2,
 #gallery h2,
+#tweet h2,
+#times h2,
 #contact h2 {
   font-weight: 600;
   font-size: 1.5rem;
+  font-style: italic;
 }
 
 #about h2 span,
 #gallery h2 span,
+#tweet h2 span,
+#times h2 span,
 #contact h2 span {
   color: brown;
 }
@@ -58,6 +64,14 @@ body {
 
 #gallery {
   background-color: #f1f7f7;
+}
+
+#tweet {
+  background-color: #e3ecec;
+}
+
+#times {
+  background-color: #ead8ff;
 }
 
 /* Kartu tetap pada layout grid sampai 3 */
@@ -152,7 +166,8 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s ease-in-out;
-  border-radius: 10%;
+  border-radius: 5px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
 }
 
 .card .info .btn-card:hover {
@@ -185,6 +200,135 @@ body.modal-open {
   transform: scale(1.1); /* Memperbesar elemen saat dihover */
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5); /* Meningkatkan bayangan saat dihover */
 }
+
+.custom-card {
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  background-color: #ffffff; /* Warna latar belakang putih */
+  margin-bottom: 20px; /* Menambahkan margin bawah antar card */
+  height: auto; /* Tinggi tetap untuk setiap kartu */
+  overflow: auto; /* Aktifkan overflow jika konten terlalu panjang */
+}
+
+.custom-header {
+  background-color: green; /* Ubah sesuai dengan warna yang diinginkan */
+  color: #ffffff; /* Warna teks */
+}
+
+.modal-content {
+  box-shadow: 16px 16px 12px 0 rgba(0, 0, 0, 0.5); /* Menambahkan bayangan */
+}
+
+.card-columns {
+  column-count: 3;
+}
+
+.card-title {
+  color: #141414; /* Warna teks judul kartu */
+  font-size: 1em; /* Ukuran font judul kartu */
+}
+
+.card-text {
+  color: #272727; /* Warna teks teks kartu */
+  font-size: 0.9em; /* Ukuran font teks kartu */
+}
+
+/* CSS Kode Anda yang sudah diperbarui */
+
+.my-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  text-align: center;
+  transition: background-color 0.3s ease; /* Transisi warna latar belakang */
+  max-width: 400px; /* Lebar maksimum card */
+  width: 90%; /* Sesuaikan lebar card dengan halaman */
+  background-color: #fff;
+  margin: 0 auto; /* Menengahkan card secara horizontal */
+  cursor: pointer;
+}
+
+.my-card #jam {
+  font-style: normal;
+}
+
+.my-button {
+  background-color: #ffb300;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  animation: pulse 2s infinite; /* Animasi berdenyut */
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5); /* Transisi warna tombol */
+  display: block;
+  margin: 20px auto; /* Pusatkan tombol */
+  width: 100%; /* Lebar 100% untuk responsivitas */
+  max-width: 200px; /* Lebar maksimum tombol */
+}
+
+/* Animasi berdenyut */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.my-button:hover {
+  background-color: #b38600; /* Warna saat hover */
+  animation: none;
+}
+
+.hidden-button {
+  display: none; /* tombol ini akan disembunyikan secara default */
+  background-color: #4caf50; /* Warna latar belakang tombol */
+  color: white; /* Warna teks tombol */
+  border: none; /* Hapus border tombol */
+  padding: 10px 20px; /* Padding tombol */
+  text-align: center; /* Teks ditengah */
+  text-decoration: none; /* Hapus garis bawah pada hover */
+
+  font-size: 16px;
+  margin-top: 10px; /* Jarak atas dari elemen sebelumnya */
+  cursor: pointer; /* Kursor menunjukkan elemen dapat diklik */
+  border-radius: 5px; /* Tambahkan sudut melengkung pada tombol */
+}
+
+/* Efek hover */
+.hidden-button:hover {
+  background-color: #45a049; /* Ganti warna latar belakang tombol saat hover */
+}
+
+/* Animasi transisi warna pada card */
+@keyframes my-changeColor {
+  0% {
+    background-color: #fff;
+  }
+  25% {
+    background-color: #e0ffff;
+  }
+  50% {
+    background-color: #f0f8ff;
+  }
+  75% {
+    background-color: #f5f5dc;
+  }
+  100% {
+    background-color: #f0ffff;
+  }
+}
+
+.my-animated {
+  animation: my-changeColor 5s infinite; /* Transisi warna selama 5 detik, diulang tanpa henti */
+}
+
 #contact {
   background-color: #ddd3d3;
 }
@@ -192,6 +336,10 @@ body.modal-open {
 .custom-btn-width {
   width: 200px; /* Sesuaikan dengan lebar yang Anda inginkan */
   margin: 0 auto; /* Menengahkan tombol secara horizontal */
+}
+
+#btn-submit {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
 }
 
 .spinner-border {
@@ -226,5 +374,21 @@ section {
     width: 90%;
     max-width: 400px;
     margin: 0 auto 30px; /* Menjadikan margin bawah tetap */
+  }
+}
+
+@media (max-width: 992px) {
+  .card-columns {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-columns {
+    column-count: 1;
+  }
+
+  .custom-card {
+    margin-bottom: 20px; /* Menambahkan margin bawah antar card pada tampilan mobile */
   }
 }
