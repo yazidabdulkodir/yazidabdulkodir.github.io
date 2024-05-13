@@ -98,7 +98,7 @@ function revealEasterButton() {
 // Fungsi untuk menampilkan pesan Easter egg
 function revealEasterEgg() {
   alert(
-    "Jam Hidup: Mengurai Misteri di Balik Detik-detik yang Melaju Tanpa Henti. Kalimat itu mencoba untuk menyampaikan bahwa dalam kehidupan, kita sering kali berusaha untuk memahami makna dari setiap momen, meskipun detik-detik itu berlalu dengan cepat dan tanpa ampun. Ini mengundang pembaca untuk merenungkan makna kehidupan dan waktu yang terus berjalan, seringkali tanpa kita sadari."
+    "Jam Hidup: Mengurai Misteri di Balik Detik-detik yang Melaju Tanpa Henti. Kalimat itu mencoba untuk menyampaikan bahwa dalam kehidupan, kita sering kali berusaha untuk memahami makna dari setiap momen, meskipun detik-detik itu berlalu dengan cepat dan tanpa henti. Ini mengundang pembaca untuk merenungkan makna kehidupan dan waktu yang terus berjalan, seringkali tanpa kita sadari."
   );
 }
 
@@ -203,3 +203,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateCursorPosition();
 });
+
+// Fungsi untuk menangani klik kanan
+function disableRightClick(event) {
+  // Hentikan tindakan default yang terkait dengan klik kanan
+  event.preventDefault();
+}
+// Tambahkan event listener untuk menangani klik kanan
+document.addEventListener("contextmenu", disableRightClick);

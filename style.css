@@ -57,7 +57,7 @@ body {
 }
 
 .jumbotron {
-  padding-top: 6rem;
+  padding-top: 7.5rem;
   background-color: #8dd7d8;
 }
 
@@ -69,11 +69,11 @@ body {
 
 .jumbotron p {
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 #profile-img:hover {
-  content: url("img/web-icon.jpg"); /* Ganti 'other-image.jpg' dengan nama file gambar yang ingin Anda tampilkan saat di-hover */
+  content: url("img/y2.jpg"); /* Ganti 'other-image.jpg' dengan nama file gambar yang ingin Anda tampilkan saat di-hover */
 }
 
 #about {
@@ -259,7 +259,7 @@ body.modal-open {
 }
 
 .custom-header {
-  background-color: rgb(73, 73, 73); /* Ubah sesuai dengan warna yang diinginkan */
+  background-color: #198754; /* Ubah sesuai dengan warna yang diinginkan */
   color: #ffffff; /* Warna teks */
 }
 
