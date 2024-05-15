@@ -8,6 +8,18 @@ body {
   /* scroll-behavior: smooth; */
 }
 
+/* Mengubah warna latar belakang dan warna teks untuk pilihan teks */
+::selection {
+  background-color: #ffeb3b; /* Warna kuning stabilo */
+  color: #000000; /* Warna teks pilihan, bisa disesuaikan */
+}
+
+/* Mengubah warna latar belakang dan warna teks untuk pilihan teks di Mozilla Firefox */
+::-moz-selection {
+  background-color: #ffeb3b; /* Warna kuning stabilo */
+  color: #000000; /* Warna teks pilihan, bisa disesuaikan */
+}
+
 /* CSS styling untuk cursor */
 .cursor {
   position: fixed;
@@ -90,6 +102,17 @@ body {
   font-style: italic;
 }
 
+#entertainment h2 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: white;
+}
+
+#entertainment h2 span {
+  color: rgb(255, 44, 44);
+}
+
 #about h2 span,
 #gallery h2 span,
 #tweet h2 span,
@@ -105,6 +128,10 @@ body {
 
 #gallery {
   background-color: #f1f7f7;
+}
+
+#entertainment {
+  background-color: #212121;
 }
 
 #tweet {
@@ -246,6 +273,136 @@ body.modal-open {
 .download-btn button:hover {
   transform: scale(1.1); /* Memperbesar elemen saat dihover */
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5); /* Meningkatkan bayangan saat dihover */
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px; /* Adjust the gap between cards as needed */
+}
+
+.card-movie {
+  width: 200px;
+  height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 24px;
+  perspective: 2000px;
+  cursor: pointer;
+  border-radius: 20%;
+  margin: 10px; /* Add margin to create space between cards */
+}
+
+.label-game {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(207, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  z-index: 2;
+  transition: transform 0.5s;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wrapp-movie {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: black;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 20px, rgba(0, 0, 0, 0.22) 0px 7px 7px;
+}
+
+.card-movie:hover .wrapp-movie {
+  transform: perspective(700px) translateY(-5%) rotateX(20deg) translateZ(0);
+  box-shadow: 2px 25px 22px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 25px 22px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 25px 22px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapp-movie::before,
+.wrapp-movie::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 60px;
+  transition: all 0.5s;
+  border-radius: 20px;
+  position: absolute;
+  left: 0;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 20px, rgba(0, 0, 0, 0.22) 0px 7px 7px;
+}
+
+.wrapp-movie::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 46%, rgba(12, 13, 19, 0.5) 68%, rgba(12, 13, 19) 97%);
+}
+
+.wrapp-movie::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(to bottom, transparent 46%, rgba(12, 13, 19, 0.5) 68%, rgba(12, 13, 19) 97%);
+}
+
+.wrapp-movie img {
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 20px, rgba(0, 0, 0, 0.22) 0px 7px 7px;
+}
+
+.card-movie:hover .wrapp-movie::before,
+.card-movie:hover .wrapp-movie::after {
+  opacity: 1;
+}
+
+.card-movie:hover .wrapp-movie::after {
+  height: 110%;
+}
+
+.logo {
+  width: 80%;
+  transition: transform 0.5s;
+  position: absolute;
+  bottom: 5px;
+}
+
+.card-movie:hover .logo {
+  transform: translate3d(0%, -30px, 70px);
+}
+
+.card-movie:hover .cover-image {
+  opacity: 0.3;
+}
+
+.character {
+  width: 80%;
+  opacity: 0;
+  transition: all 0.5s;
+  filter: drop-shadow(2px 2px 2px #000);
+  position: absolute;
+  z-index: -1;
+}
+
+.card-movie:hover .character {
+  opacity: 1;
+  transform: translate3d(5%, -20%, 470px);
+}
+
+.card-movie:hover .label-game {
+  transform: perspective(700px) translateY(-5%) rotateX(20deg) translateZ(0);
 }
 
 .custom-card {
