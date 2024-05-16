@@ -218,7 +218,7 @@
           </div>
         </div>
         <div class="download-btn gap-2 col-5 mx-auto">
-          <button onclick="window.location.href='downloads/yazid resume.pdf'" class="btn btn-success" type="button">View my CV</button>
+          <button onclick="playClickAndRedirect('downloads/yazid resume.pdf')" class="btn btn-success" type="button">View my CV</button>
         </div>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -594,6 +594,10 @@
     <!-- kursor -->
     <div class="cursor"></div>
 
+    <!-- audio effect -->
+    <audio id="click-sound" src="audio/keyboard press.mp3"></audio>
+    <audio id="alert-sound" src="audio/Blip Bleep.mp3"></audio>
+
     <!-- Contact -->
     <section id="contact">
       <div class="container">
@@ -623,7 +627,7 @@
               </div>
               <div class="row">
                 <div class="col-12 text-center">
-                  <button id="btn-submit" type="submit" class="btn btn-danger btn-kirim custom-btn-width">Kirim</button>
+                  <button id="btn-submit" type="submit" class="btn btn-danger btn-kirim custom-btn-width" onclick="playClickSound()">Kirim</button>
                   <button id="btn-loading" class="btn btn-danger btn-loading d-none custom-btn-width" type="button" disabled>
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                     Loading...

@@ -68,6 +68,26 @@ body {
   font-size: 1rem;
 }
 
+.nav-link {
+  position: relative; /* Untuk memungkinkan penggunaan pseudo-element */
+  transition: color 0.3s ease; /* Transisi untuk perubahan warna teks */
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Posisikan di bawah teks */
+  width: 0;
+  height: 2px;
+  background-color: white; /* Warna garis bawah */
+  transition: width 0.3s ease; /* Animasi lebar garis */
+}
+
+.nav-link:hover::after {
+  width: 100%; /* Lebar penuh saat di-hover */
+}
+
 .jumbotron {
   padding-top: 7.5rem;
   background-color: #8dd7d8;
@@ -266,13 +286,59 @@ body.modal-open {
 }
 
 .download-btn button {
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi transform dan box-shadow saat hover */
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5); /* Bayangan standar */
+  background-color: #198754; /* Warna latar belakang tombol */
+  color: white; /* Warna teks tombol */
+  border: none; /* Menghilangkan border default */
+  border-radius: 20px; /* Membulatkan sudut tombol */
+  padding: 10px 20px; /* Padding tombol */
+  font-size: 16px; /* Ukuran font tombol */
+  cursor: pointer; /* Mengubah kursor saat di atas tombol */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animasi transform dan box-shadow saat hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(255, 255, 255, 0.1); /* Bayangan standar untuk efek menonjol */
+  position: relative; /* Membuat tombol sebagai kontainer posisi */
+  display: inline-block; /* Untuk menghindari gangguan layout */
+  text-align: center; /* Menyelaraskan teks */
+}
+
+.download-btn button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top left, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)); /* Efek kilauan */
+  border-radius: 20px; /* Menyelaraskan dengan border-radius tombol */
+  pointer-events: none; /* Mencegah interaksi dengan pseudo-element */
 }
 
 .download-btn button:hover {
-  transform: scale(1.1); /* Memperbesar elemen saat dihover */
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5); /* Meningkatkan bayangan saat dihover */
+  transform: translateY(2px); /* Memindahkan elemen sedikit ke dalam saat dihover */
+  box-shadow: inset 0 8px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(255, 255, 255, 0.1); /* Efek deboss saat dihover */
+}
+
+.download-btn button:active {
+  transform: translateY(4px); /* Memindahkan elemen lebih dalam saat ditekan */
+  box-shadow: inset 0 8px 15px rgba(0, 0, 0, 0.5), 0 4px 6px rgba(255, 255, 255, 0.1); /* Efek deboss lebih dalam saat ditekan */
+}
+
+.download-btn button::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 8px;
+  border-radius: 0 0 5px 5px; /* Menyelaraskan dengan border-radius tombol */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animasi transform dan box-shadow saat hover */
+}
+
+.download-btn button:hover::after {
+  transform: translateY(-2px); /* Menyesuaikan bayangan tambahan saat dihover */
+}
+
+.download-btn button:active::after {
+  transform: translateY(-4px); /* Menyesuaikan bayangan tambahan saat ditekan */
 }
 
 .cards-container {
@@ -542,8 +608,63 @@ body.modal-open {
   margin: 0 auto; /* Menengahkan tombol secara horizontal */
 }
 
-#btn-submit {
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+.btn {
+  position: relative;
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-danger {
+  background-color: #dc3545; /* Warna latar belakang tombol */
+  color: white; /* Warna teks tombol */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(255, 255, 255, 0.1); /* Bayangan standar */
+}
+
+.btn-danger:hover {
+  transform: translateY(2px); /* Memindahkan elemen sedikit ke dalam saat dihover */
+  box-shadow: inset 0 8px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(255, 255, 255, 0.1); /* Efek deboss saat dihover */
+}
+
+.btn-danger:active {
+  transform: translateY(4px); /* Memindahkan elemen lebih dalam saat ditekan */
+  box-shadow: inset 0 8px 15px rgba(0, 0, 0, 0.5), 0 4px 6px rgba(255, 255, 255, 0.1); /* Efek deboss lebih dalam saat ditekan */
+}
+
+.btn-danger:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top left, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  border-radius: 5px; /* Menyelaraskan dengan border-radius tombol */
+  pointer-events: none; /* Mencegah interaksi dengan pseudo-element */
+}
+
+.btn-danger::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.2); /* Bayangan tambahan di bawah tombol */
+  border-radius: 0 0 5px 5px; /* Menyelaraskan dengan border-radius tombol */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animasi transform dan box-shadow saat hover */
+}
+
+.btn-danger:hover::after {
+  transform: translateY(-2px); /* Menyesuaikan bayangan tambahan saat dihover */
+}
+
+.btn-danger:active::after {
+  transform: translateY(-4px); /* Menyesuaikan bayangan tambahan saat ditekan */
 }
 
 .spinner-border {

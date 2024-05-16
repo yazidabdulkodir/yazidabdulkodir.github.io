@@ -4,24 +4,48 @@ const btnKirim = document.querySelector(".btn-kirim");
 const btnLoading = document.querySelector(".btn-loading");
 const myAlert = document.querySelector(".my-alert");
 
+// Fungsi untuk memutar suara klik
+function playClickSound() {
+  const audio = document.getElementById("click-sound");
+  audio.play();
+}
+
+// Fungsi untuk memutar suara alert
+function playAlertSound() {
+  const audio = document.getElementById("alert-sound");
+  audio.play();
+}
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  // ketika tombol submit diklik
-  // tampilkan tombol loading, hilangkan tombol kirim
-  btnLoading.classList.toggle("d-none");
-  btnKirim.classList.toggle("d-none");
+  // Ketika tombol submit diklik, tampilkan tombol loading dan sembunyikan tombol kirim
+  btnLoading.classList.remove("d-none");
+  btnKirim.classList.add("d-none");
+
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
     .then((response) => {
-      // tampilkan tombol kirim, hilangkan tombol loading
-      btnLoading.classList.toggle("d-none");
-      btnKirim.classList.toggle("d-none");
-      // tampilkan alert
-      myAlert.classList.toggle("d-none");
-      // reset formnya
-      form.reset();
-      console.log("Success!", response);
+      // Tampilkan tombol kirim, sembunyikan tombol loading
+      btnLoading.classList.add("d-none");
+      btnKirim.classList.remove("d-none");
+
+      if (response.ok) {
+        // Tampilkan alert dan mainkan suara alert
+        myAlert.classList.remove("d-none");
+        playAlertSound();
+
+        // Reset form
+        form.reset();
+        console.log("Success!", response);
+      } else {
+        console.error("Error!", response.statusText);
+      }
     })
-    .catch((error) => console.error("Error!", error.message));
+    .catch((error) => {
+      console.error("Error!", error.message);
+      // Tampilkan kembali tombol kirim jika terjadi kesalahan
+      btnLoading.classList.add("d-none");
+      btnKirim.classList.remove("d-none");
+    });
 });
 
 // Fungsi untuk menampilkan modal saat tombol "Read more" diklik
@@ -203,6 +227,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateCursorPosition();
 });
+
+function playClickSound() {
+  var audio = document.getElementById("click-sound");
+  audio.play();
+}
+
+// Fungsi untuk memutar suara klik dan mengarahkan ke URL
+function playClickAndRedirect(url) {
+  playClickSound();
+  setTimeout(() => {
+    window.location.href = url;
+  }, 1000); // Beri jeda waktu untuk memutar suara sebelum mengarahkan
+}
 
 // Fungsi untuk menangani klik kanan
 function disableRightClick(event) {
