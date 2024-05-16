@@ -557,23 +557,42 @@ body.modal-open {
 }
 
 .hidden-button {
-  display: none; /* tombol ini akan disembunyikan secara default */
-  background-color: #4caf50; /* Warna latar belakang tombol */
+  display: none; /* Tombol ini akan disembunyikan secara default */
+  background-color: #198754; /* Warna latar belakang tombol */
   color: white; /* Warna teks tombol */
   border: none; /* Hapus border tombol */
   padding: 10px 20px; /* Padding tombol */
   text-align: center; /* Teks ditengah */
   text-decoration: none; /* Hapus garis bawah pada hover */
-
   font-size: 16px;
   margin-top: 10px; /* Jarak atas dari elemen sebelumnya */
   cursor: pointer; /* Kursor menunjukkan elemen dapat diklik */
   border-radius: 5px; /* Tambahkan sudut melengkung pada tombol */
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+  position: relative; /* Posisi relatif untuk menggunakan pseudo-element */
+  overflow: hidden; /* Sembunyikan elemen pseudo yang melampaui batas tombol */
 }
 
 /* Efek hover */
 .hidden-button:hover {
-  background-color: #45a049; /* Ganti warna latar belakang tombol saat hover */
+  background-color: #2ad083; /* Ganti warna latar belakang tombol saat hover */
+}
+
+/* Pseudo-element untuk kilauan */
+.hidden-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%; /* Awalnya berada di luar tombol */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transition: left 0.5s ease-in-out;
+}
+
+/* Efek kilauan saat hover */
+.hidden-button:hover::before {
+  left: 100%; /* Bergerak ke sisi kanan tombol */
 }
 
 /* Animasi transisi warna pada card */

@@ -233,12 +233,37 @@ function playClickSound() {
   audio.play();
 }
 
+function playEggSound() {
+  var audio = document.getElementById("sound-egg");
+  audio.play();
+}
+
+function playJamSound() {
+  var audio = document.getElementById("sound-jam");
+  audio.play();
+}
+
 // Fungsi untuk memutar suara klik dan mengarahkan ke URL
 function playClickAndRedirect(url) {
   playClickSound();
   setTimeout(() => {
     window.location.href = url;
   }, 1000); // Beri jeda waktu untuk memutar suara sebelum mengarahkan
+}
+
+// Fungsi untuk memutar suara klik dan kemudian menjalankan fungsi changeCardContent
+function playClickAndChangeContent() {
+  playJamSound();
+  setTimeout(() => {
+    changeCardContent();
+  }, 100); // Beri jeda waktu untuk memutar suara sebelum menjalankan fungsi
+}
+
+function playClickAndReveal() {
+  playEggSound();
+  setTimeout(() => {
+    revealEasterEgg();
+  }, 600); // Beri jeda waktu untuk memutar suara sebelum menjalankan fungsi
 }
 
 // Fungsi untuk menangani klik kanan
