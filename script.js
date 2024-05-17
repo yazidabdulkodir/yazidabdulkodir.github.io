@@ -195,11 +195,22 @@ document.addEventListener("DOMContentLoaded", function () {
   let lastMouseMoveTime = 0;
   const idleTimeThreshold = 100; // waktu jeda dalam milidetik
 
+  let lastCursorX = 0;
+  let lastCursorY = 0;
+
   document.addEventListener("mousemove", function (e) {
     isCursorMoving = true;
     cursorX = e.clientX;
     cursorY = e.clientY;
     lastMouseMoveTime = Date.now();
+
+    // Membuat partikel lebih sering jika kursor bergerak cepat
+    const distance = Math.sqrt((cursorX - lastCursorX) ** 2 + (cursorY - lastCursorY) ** 2);
+    if (distance > 10) {
+      createParticle(cursorX, cursorY);
+      lastCursorX = cursorX;
+      lastCursorY = cursorY;
+    }
   });
 
   document.addEventListener("scroll", function () {
