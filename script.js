@@ -192,11 +192,14 @@ document.addEventListener("DOMContentLoaded", function () {
   let isCursorMoving = false;
   let cursorX = 0;
   let cursorY = 0;
+  let lastMouseMoveTime = 0;
+  const idleTimeThreshold = 100; // waktu jeda dalam milidetik
 
   document.addEventListener("mousemove", function (e) {
     isCursorMoving = true;
     cursorX = e.clientX;
     cursorY = e.clientY;
+    lastMouseMoveTime = Date.now();
   });
 
   document.addEventListener("scroll", function () {
@@ -217,10 +220,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateCursorPosition() {
-    if (isCursorMoving) {
+    const currentTime = Date.now();
+    if (isCursorMoving && currentTime - lastMouseMoveTime < idleTimeThreshold) {
       const cursor = document.querySelector(".cursor");
-      cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+      if (cursor) {
+        cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+      }
       createParticle(cursorX, cursorY);
+      isCursorMoving = false; // Reset the flag to avoid continuous particle creation
     }
     requestAnimationFrame(updateCursorPosition);
   }
