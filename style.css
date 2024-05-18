@@ -486,6 +486,11 @@ body.modal-open {
   color: #ffffff; /* Warna teks */
 }
 
+.modal-body p {
+  color: #000;
+  font-weight: 500;
+}
+
 .modal-content {
   box-shadow: 16px 16px 12px 0 rgba(0, 0, 0, 0.5); /* Menambahkan bayangan */
 }
