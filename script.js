@@ -136,6 +136,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //partikel kursor
 document.addEventListener("DOMContentLoaded", function () {
+  // Fungsi untuk mendeteksi apakah perangkat mendukung sentuhan
+  function isTouchDevice() {
+    return "ontouchstart" in window || navigator.maxTouchPoints > 0;
+  }
+
+  // Jika perangkat adalah perangkat sentuh, keluar dari fungsi ini
+  if (isTouchDevice()) {
+    return;
+  }
+
   const colors = [
     "#FF6633",
     "#FFB399",
@@ -282,6 +292,26 @@ function playClickAndReveal() {
   setTimeout(() => {
     revealEasterEgg();
   }, 600); // Beri jeda waktu untuk memutar suara sebelum menjalankan fungsi
+}
+
+//bubble animasi
+document.addEventListener("click", function (event) {
+  console.log("Clicked at:", event.clientX, event.clientY);
+  createBubble(event.clientX + window.scrollX, event.clientY + window.scrollY);
+});
+
+function createBubble(x, y) {
+  console.log("Creating bubble at:", x, y);
+  const bubble = document.createElement("div");
+  bubble.classList.add("bubble");
+  bubble.style.left = `${x}px`;
+  bubble.style.top = `${y}px`;
+  document.body.appendChild(bubble);
+
+  // Remove the bubble after the animation completes
+  bubble.addEventListener("animationend", function () {
+    bubble.remove();
+  });
 }
 
 // Fungsi untuk menangani klik kanan
