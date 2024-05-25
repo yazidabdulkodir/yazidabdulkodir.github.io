@@ -105,7 +105,7 @@ body {
 }
 
 #profile-img:hover {
-  content: url("img/y2.jpg"); /* Ganti 'other-image.jpg' dengan nama file gambar yang ingin Anda tampilkan saat di-hover */
+  content: url("img/yazid\ 1.jpg"); /* Ganti 'other-image.jpg' dengan nama file gambar yang ingin Anda tampilkan saat di-hover */
 }
 
 #about {
@@ -529,7 +529,7 @@ body.modal-open {
 }
 
 .my-button {
-  background-color: #ffb300;
+  background-color: #198754;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -557,13 +557,13 @@ body.modal-open {
 }
 
 .my-button:hover {
-  background-color: #b38600; /* Warna saat hover */
+  background-color: #115133; /* Warna saat hover */
   animation: none;
 }
 
 .hidden-button {
   display: none; /* Tombol ini akan disembunyikan secara default */
-  background-color: #198754; /* Warna latar belakang tombol */
+  background-color: #ffb300; /* Warna latar belakang tombol */
   color: white; /* Warna teks tombol */
   border: none; /* Hapus border tombol */
   padding: 10px 20px; /* Padding tombol */
@@ -580,7 +580,7 @@ body.modal-open {
 
 /* Efek hover */
 .hidden-button:hover {
-  background-color: #2ad083; /* Ganti warna latar belakang tombol saat hover */
+  background-color: #ffcf5f; /* Ganti warna latar belakang tombol saat hover */
 }
 
 /* Pseudo-element untuk kilauan */

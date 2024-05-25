@@ -262,12 +262,12 @@ function playClickSound() {
 }
 
 function playEggSound() {
-  var audio = document.getElementById("sound-egg");
+  var audio = document.getElementById("sound-jam");
   audio.play();
 }
 
 function playJamSound() {
-  var audio = document.getElementById("sound-jam");
+  var audio = document.getElementById("sound-egg");
   audio.play();
 }
 
