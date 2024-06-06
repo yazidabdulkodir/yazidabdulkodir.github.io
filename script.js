@@ -313,11 +313,3 @@ function createBubble(x, y) {
     bubble.remove();
   });
 }
-
-// Fungsi untuk menangani klik kanan
-function disableRightClick(event) {
-  // Hentikan tindakan default yang terkait dengan klik kanan
-  event.preventDefault();
-}
-// Tambahkan event listener untuk menangani klik kanan
-document.addEventListener("contextmenu", disableRightClick);

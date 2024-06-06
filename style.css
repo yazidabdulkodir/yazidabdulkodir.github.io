@@ -1,5 +1,8 @@
 * {
   font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
@@ -104,10 +107,6 @@ body {
   font-size: 0.8rem;
 }
 
-#profile-img:hover {
-  content: url("img/yazid\ 1.jpg"); /* Ganti 'other-image.jpg' dengan nama file gambar yang ingin Anda tampilkan saat di-hover */
-}
-
 #about {
   background-color: #d5e5e5;
 }
@@ -120,6 +119,13 @@ body {
   font-weight: 600;
   font-size: 1.5rem;
   font-style: italic;
+}
+
+#timelines .h2t {
+  font-weight: 600;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #34ffff;
 }
 
 #entertainment h2 {
@@ -141,13 +147,17 @@ body {
   color: brown;
 }
 
+#timelines h2 span {
+  color: yellow;
+}
+
 #about p,
 #gallery p {
   font-size: 0.9rem;
 }
 
 #gallery {
-  background-color: #f1f7f7;
+  background-color: #96fefe;
 }
 
 #entertainment {
@@ -160,6 +170,97 @@ body {
 
 #times {
   background-color: #ead8ff;
+}
+
+#timelines {
+  background-color: #404b68;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 100px auto;
+}
+
+.container-timeline {
+  padding: 10px 50px;
+  position: relative;
+  width: 50%;
+}
+
+.text-box {
+  padding: 20px 30px;
+  background: #fff;
+  position: relative;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.left-container {
+  left: 0;
+}
+
+.right-container {
+  left: 50%;
+}
+
+.container-timeline img {
+  position: absolute;
+  width: 40px;
+  border-radius: 50%;
+  right: -20px;
+  top: 32px;
+  z-index: 2; /* Nilai z-index yang lebih tinggi dari garis */
+}
+
+.right-container img {
+  left: -20px;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background: #fff;
+  top: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: 1; /* Adjusted z-index */
+}
+
+.text-box h2 {
+  font-weight: 500;
+  font-size: larger;
+}
+
+.text-box small {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.left-container-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid #fff;
+  right: -15px;
+}
+
+.right-container-arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid #fff;
+  left: -15px;
 }
 
 /* Kartu tetap pada layout grid sampai 3 */
@@ -706,7 +807,7 @@ body.modal-open {
   position: absolute;
   width: 20px;
   height: 20px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 35, 0.7);
   border-radius: 50%;
   pointer-events: auto; /* Prevents bubbles from blocking clicks */
   animation: fadeInOut 1s ease-out;
@@ -742,6 +843,10 @@ section {
 
 /* Responsiveness */
 @media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden; /* Pastikan ini diterapkan */
+  }
+
   .wrapper {
     flex-direction: column;
     align-items: center;
@@ -751,6 +856,44 @@ section {
     width: 90%;
     max-width: 400px;
     margin: 0 auto 30px; /* Menjadikan margin bawah tetap */
+  }
+
+  .timeline {
+    margin: 50px auto;
+  }
+
+  .timeline::after {
+    left: 31px;
+  }
+
+  .container-timeline {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 25px;
+  }
+
+  .text-box {
+    font-size: 13px;
+  }
+
+  .text-box small {
+    margin-bottom: 10px;
+  }
+
+  .right-container {
+    left: 0;
+  }
+
+  .left-container img,
+  .right-container img {
+    left: 10px;
+  }
+
+  .left-container-arrow,
+  .right-container-arrow {
+    border-right: 15px solid #fff;
+    border-left: 0;
+    left: -15px;
   }
 }
 
