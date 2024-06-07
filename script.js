@@ -328,3 +328,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 });
+
+setTimeout(function () {
+  alert("Source music: Sharou - Superstar");
+}, 7000); // Munculkan alert setelah 15 detik (15000 milidetik)
