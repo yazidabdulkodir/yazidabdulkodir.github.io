@@ -340,12 +340,12 @@ body {
 .card .info h1 {
   margin: 0;
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .card .info p {
   letter-spacing: 1px;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 15px;
   margin-top: 8px;
   margin-bottom: 20px;
@@ -589,7 +589,7 @@ body.modal-open {
 
 .modal-body p {
   color: #000;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .modal-content {

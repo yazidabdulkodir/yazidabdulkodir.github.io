@@ -313,3 +313,18 @@ function createBubble(x, y) {
     bubble.remove();
   });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  var audio = document.getElementById("background-music");
+  var playPromise = audio.play();
+
+  if (playPromise !== undefined) {
+    playPromise
+      .then((_) => {
+        console.log("Musik diputar otomatis.");
+      })
+      .catch((error) => {
+        console.log("Musik tidak bisa diputar otomatis, mungkin perlu interaksi user.");
+      });
+  }
+});
