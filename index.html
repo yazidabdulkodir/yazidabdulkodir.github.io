@@ -12,6 +12,13 @@
       * {
         font-family: "Tiny5", sans-serif;
       }
+
+      /* Mengubah warna teks yang dipilih */
+      ::selection {
+        background: rgb(199, 45, 255); /* Warna latar belakang teks yang dipilih */
+        color: white; /* Warna teks yang dipilih */
+      }
+
       body {
         margin: 0;
         padding: 0;
@@ -24,7 +31,9 @@
         background-size: cover;
         color: white;
         font-family: Arial, sans-serif;
+        overflow: hidden;
       }
+
       .button {
         padding: 15px 25px;
         font-size: 20px;
@@ -39,16 +48,32 @@
       .button:hover {
         box-shadow: 0 0 5px rgb(199, 45, 255), 0 0 25px rgb(199, 45, 255), 0 0 50px rgb(199, 45, 255), 0 0 100px rgb(199, 45, 255), 0 0 200px rgb(199, 45, 255);
       }
+
+      .button.blink {
+        animation: blink 0.5s steps(2) 3; /* Mengatur animasi berkedip */
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+
       .image-wrapper {
         width: 100px; /* Lebar pembungkus gambar */
         height: 100px; /* Tinggi pembungkus gambar */
         border-radius: 50%; /* Membuat pembungkus bulat */
         overflow: hidden; /* Menghilangkan gambar yang keluar dari batas pembungkus */
         background-color: rgba(255, 255, 255, 0.5); /* Latar belakang putih transparan */
-        margin-bottom: 20px; /* Menambahkan jarak antara gambar dan tombol */
+        margin-bottom: 50px; /* Menambahkan jarak antara gambar dan tombol */
         border: 2px solid white; /* Menambahkan border */
         box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.8); /* Menambahkan shadow putih */
       }
+
       .image-wrapper img {
         width: 100%; /* Lebar gambar GIF akan diatur ulang ke 100% dari pembungkusnya */
         height: auto; /* Mengikuti proporsi asli gambar */
@@ -62,13 +87,50 @@
       <img src="img/night.gif" alt="GIF Anda" />
     </div>
 
-    <button class="button" onclick="goToMain()">Lanjutkan</button>
-    <p>Tekan 'Lanjutkan' untuk masuk ke website-nya.</p>
+    <button class="button" id="continueButton">Lanjutkan</button>
+    <p class="pra">aN-aibetseW eKeH- aKEnI eK ikaL 'natniuL'</p>
+
+    <audio id="clickSound" src="audio/Blip Bleep.mp3"></audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+
+    <!-- Skrip untuk menginisialisasi scramble text -->
+    <script>
+      // Registrasi plugin Text
+      gsap.registerPlugin(TextPlugin);
+
+      // Inisialisasi animasi text
+      gsap.to(".pra", { duration: 4, text: "Klik 'Lanjutkan' Untuk Masuk Ke Website-Nya!", delay: 1.5 });
+    </script>
 
     <script>
-      function goToMain() {
-        window.location.href = "main.html";
+      document.getElementById("continueButton").onclick = function () {
+        var button = this;
+        var audio = document.getElementById("clickSound");
+
+        // Tambahkan kelas animasi blink
+        button.classList.add("blink");
+
+        // Putar suara
+        audio.play();
+
+        // Setelah animasi dan suara selesai, alihkan ke halaman utama
+        audio.onended = function () {
+          setTimeout(function () {
+            window.location.href = "main.html";
+          }, 500); // Menambahkan sedikit penundaan untuk menyelesaikan animasi berkedip
+        };
+      };
+
+      // Fungsi untuk menangani klik kanan
+      function disableRightClick(event) {
+        // Hentikan tindakan default yang terkait dengan klik kanan
+        event.preventDefault();
       }
+      // Tambahkan event listener untuk menangani klik kanan
+      document.addEventListener("contextmenu", disableRightClick);
     </script>
   </body>
 </html>

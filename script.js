@@ -332,3 +332,11 @@ document.addEventListener("DOMContentLoaded", function () {
 setTimeout(function () {
   alert("Source music: Sharou - Superstar");
 }, 7000); // Munculkan alert setelah 15 detik (15000 milidetik)
+
+// Fungsi untuk menangani klik kanan
+function disableRightClick(event) {
+  // Hentikan tindakan default yang terkait dengan klik kanan
+  event.preventDefault();
+}
+// Tambahkan event listener untuk menangani klik kanan
+document.addEventListener("contextmenu", disableRightClick);

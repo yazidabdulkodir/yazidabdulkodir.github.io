@@ -354,19 +354,20 @@ body {
 .card .info .btn-card {
   text-decoration: none;
   padding: 0.5rem 1rem;
-  background-color: #fff;
-  color: #000000;
+  background-color: rgba(255, 245, 48, 0);
+  color: #fff530;
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s ease-in-out;
   border-radius: 5px;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+  border: 1px solid #fff530;
 }
 
 .card .info .btn-card:hover {
-  background-color: rgb(73, 73, 73);
+  background-color: #fff530;
   color: white;
+  box-shadow: 0 0 5px #fff530, 0 0 25px #fff530;
 }
 
 body.modal-open {
