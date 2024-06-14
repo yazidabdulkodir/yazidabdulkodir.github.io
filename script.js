@@ -333,6 +333,30 @@ setTimeout(function () {
   alert("Source music: Sharou - Superstar");
 }, 7000); // Munculkan alert setelah 15 detik (15000 milidetik)
 
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav ul li a");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if (window.pageYOffset >= sectionTop - 100 && window.pageYOffset < sectionTop + sectionHeight - 100) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  });
+});
+
 // Fungsi untuk menangani klik kanan
 function disableRightClick(event) {
   // Hentikan tindakan default yang terkait dengan klik kanan

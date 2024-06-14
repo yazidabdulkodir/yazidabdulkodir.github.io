@@ -71,24 +71,47 @@ body {
   font-size: 1rem;
 }
 
+#navbarNav ul li a {
+  color: white;
+  transition: color 0.3s ease; /* Tambahkan transisi untuk efek perubahan warna */
+}
+
+#navbarNav ul li a:hover,
+#navbarNav ul li a.active {
+  color: yellow;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center; /* Mengatur posisi menu navbar di tengah */
+  background-color: #333; /* Warna latar belakang navbar */
+  padding: 10px 0; /* Padding atas dan bawah */
+}
+
 .nav-link {
-  position: relative; /* Untuk memungkinkan penggunaan pseudo-element */
+  position: relative;
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px; /* Padding untuk ruang di sekitar teks */
   transition: color 0.3s ease; /* Transisi untuk perubahan warna teks */
 }
 
 .nav-link::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: -5px; /* Posisikan di bawah teks */
+  bottom: 9px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0); /* Mulai dari tengah dan tidak ada lebar awal */
   width: 0;
   height: 2px;
-  background-color: white; /* Warna garis bawah */
-  transition: width 0.3s ease; /* Animasi lebar garis */
+  background-color: white;
+  transition: width 0.3s ease, transform 0.3s ease; /* Animasi lebar dan transformasi */
 }
 
-.nav-link:hover::after {
-  width: 100%; /* Lebar penuh saat di-hover */
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: translateX(-50%) scaleX(1); /* Memperluas garis dari tengah ke kiri dan kanan */
+  width: 100%; /* Penuh lebar saat selesai */
 }
 
 .jumbotron {
