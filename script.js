@@ -271,11 +271,11 @@ function playJamSound() {
   audio.play();
 }
 
-// Fungsi untuk memutar suara klik dan mengarahkan ke URL
-function playClickAndRedirect(url) {
+function playClickAndRedirect(button) {
+  var url = button.getAttribute("data-url");
   playClickSound();
   setTimeout(() => {
-    window.location.href = url;
+    window.open(url, "_blank"); // Membuka URL di tab baru
   }, 1000); // Beri jeda waktu untuk memutar suara sebelum mengarahkan
 }
 
@@ -304,8 +304,11 @@ function createBubble(x, y) {
   console.log("Creating bubble at:", x, y);
   const bubble = document.createElement("div");
   bubble.classList.add("bubble");
-  bubble.style.left = `${x}px`;
-  bubble.style.top = `${y}px`;
+
+  // Adjust position to center the bubble on the cursor
+  bubble.style.left = `${x - 20}px`;
+  bubble.style.top = `${y - 20}px`;
+
   document.body.appendChild(bubble);
 
   // Remove the bubble after the animation completes
@@ -313,6 +316,11 @@ function createBubble(x, y) {
     bubble.remove();
   });
 }
+
+// Example usage: create a bubble at the current cursor position
+document.addEventListener("click", (event) => {
+  createBubble(event.clientX, event.clientY);
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   var audio = document.getElementById("background-music");

@@ -311,15 +311,16 @@
           </div>
         </div>
         <div class="card" data-aos="fade-up" data-aos-duration="1100" data-aos-delay="1300">
-          <img src="" alt="" />
+          <img src="" alt="example" />
           <div class="info">
-            <h1>Example Card</h1>
+            <h1>Example</h1>
             <p>Coming soon!.</p>
-            <a href="#" class="btn-card">Visit Site</a>
+            <a href="#" class="btn-card" inert>Visit Site</a>
           </div>
         </div>
         <div class="download-btn gap-2 col-5 mx-auto">
-          <button onclick="playClickAndRedirect('downloads/yazid resume.pdf')" class="btn btn-success" type="button">View my CV</button>
+          <button onclick="playClickAndRedirect(this)" data-url="https://yazidabdulkodir.github.io/cv/" class="btn btn-success" type="button">View my CV</button>
+      </div>
         </div>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -636,7 +637,7 @@
             <div class="card-body">
               <h5 class="card-title">Respect untuk para tentara di tubuh kita</h5>
               <p class="card-text">Ketika Kamu merasa tak ada yang mempedulikanmu, ketahuilah ada imun tubuh yang terus berjuang agar Kamu tetap sehat.</p>
-              <a href="https://youtube.com/shorts/r3hi2TuQVQY?si=lHeqQZJvoxuiGn4C">cek vidionya</a>
+              <a href="https://youtube.com/shorts/r3hi2TuQVQY?si=lHeqQZJvoxuiGn4C" target="_blank">cek vidionya</a>
               <!-- Link yang bisa diakses -->
             </div>
           </div>
@@ -697,12 +698,12 @@
     <div id="container"></div>
 
     <!-- audio effect -->
-    <audio id="click-sound" src="audio/keyboard press.mp3"></audio>
+    <audio id="click-sound" src="audio/keypress.mp3"></audio>
     <audio id="alert-sound" src="audio/Blip Bleep.mp3"></audio>
     <audio id="sound-egg" src="audio/Double Knock.mp3"></audio>
-    <audio id="sound-jam" src="audio/Select Button Sound Effect.mp3"></audio>
+    <audio id="sound-jam" src="audio/select.mp3"></audio>
     <audio id="background-music" autoplay loop>
-      <source src="audio/superstar.mp3" type="audio/mpeg" />
+      <source src="audio/sharou-superstar.mp3" type="audio/mp3" />
     </audio>
 
     <!-- Contact -->
@@ -758,7 +759,7 @@
     <!-- Footer -->
     <footer class="text-dark text-center pb-5" id="footer">
       <p>
-        Created with <i class="bi bi-heart-fill text-danger"></i> by <a href="https://www.facebook.com/yazid.ak.54" class="text-primary fw-bold"><i class="bi bi-facebook"></i> Yazid Abdul Kodir</a>. | &copy; 2024
+        <a href="https://www.facebook.com/yazid.ak.54" class="text-primary fw-bold"><i class="bi bi-facebook"></i> Yazid Abdul Kodir</a>. | &copy; 2024 <i class="bi bi-heart-fill text-danger"></i>
       </p>
     </footer>
 

@@ -413,7 +413,7 @@ body.modal-open {
 .download-btn button {
   background-color: #198754; /* Warna latar belakang tombol */
   color: white; /* Warna teks tombol */
-  border: none; /* Menghilangkan border default */
+  border: 1px solid #0f4f31; /* Menghilangkan border default */
   border-radius: 20px; /* Membulatkan sudut tombol */
   padding: 10px 20px; /* Padding tombol */
   font-size: 16px; /* Ukuran font tombol */
@@ -656,7 +656,7 @@ body.modal-open {
 .my-button {
   background-color: #198754;
   color: #fff;
-  border: none;
+  border: 1px solid #0f4d30;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
@@ -690,7 +690,7 @@ body.modal-open {
   display: none; /* Tombol ini akan disembunyikan secara default */
   background-color: #ffb300; /* Warna latar belakang tombol */
   color: white; /* Warna teks tombol */
-  border: none; /* Hapus border tombol */
+  border: 1px solid #9b6d00; /* Hapus border tombol */
   padding: 10px 20px; /* Padding tombol */
   text-align: center; /* Teks ditengah */
   text-decoration: none; /* Hapus garis bawah pada hover */
@@ -772,6 +772,7 @@ body.modal-open {
   background-color: #dc3545; /* Warna latar belakang tombol */
   color: white; /* Warna teks tombol */
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(255, 255, 255, 0.1); /* Bayangan standar */
+  border: 1px solid #781d26;
 }
 
 .btn-danger:hover {
@@ -829,22 +830,27 @@ body.modal-open {
 
 .bubble {
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 50px;
+  height: 50px;
   background-color: rgba(255, 255, 35, 0.7);
   border-radius: 50%;
-  pointer-events: auto; /* Prevents bubbles from blocking clicks */
-  animation: fadeInOut 1s ease-out;
+  pointer-events: none; /* Prevents bubbles from blocking clicks */
+  animation: fadeInOut 0.4s linear;
+  z-index: 20;
 }
 
 @keyframes fadeInOut {
   0% {
-    transform: scale(1);
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
     opacity: 1;
+    transform: scale(1);
   }
   100% {
-    transform: scale(2);
     opacity: 0;
+    transform: scale(1.5);
   }
 }
 
