@@ -410,62 +410,6 @@ body.modal-open {
   padding-top: 1.5rem;
 }
 
-.download-btn button {
-  background-color: #198754; /* Warna latar belakang tombol */
-  color: white; /* Warna teks tombol */
-  border: 1px solid #0f4f31; /* Menghilangkan border default */
-  border-radius: 20px; /* Membulatkan sudut tombol */
-  padding: 10px 20px; /* Padding tombol */
-  font-size: 16px; /* Ukuran font tombol */
-  cursor: pointer; /* Mengubah kursor saat di atas tombol */
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animasi transform dan box-shadow saat hover */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(255, 255, 255, 0.1); /* Bayangan standar untuk efek menonjol */
-  position: relative; /* Membuat tombol sebagai kontainer posisi */
-  display: inline-block; /* Untuk menghindari gangguan layout */
-  text-align: center; /* Menyelaraskan teks */
-}
-
-.download-btn button:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to top left, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)); /* Efek kilauan */
-  border-radius: 20px; /* Menyelaraskan dengan border-radius tombol */
-  pointer-events: none; /* Mencegah interaksi dengan pseudo-element */
-}
-
-.download-btn button:hover {
-  transform: translateY(2px); /* Memindahkan elemen sedikit ke dalam saat dihover */
-  box-shadow: inset 0 8px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(255, 255, 255, 0.1); /* Efek deboss saat dihover */
-}
-
-.download-btn button:active {
-  transform: translateY(4px); /* Memindahkan elemen lebih dalam saat ditekan */
-  box-shadow: inset 0 8px 15px rgba(0, 0, 0, 0.5), 0 4px 6px rgba(255, 255, 255, 0.1); /* Efek deboss lebih dalam saat ditekan */
-}
-
-.download-btn button::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  height: 8px;
-  border-radius: 0 0 5px 5px; /* Menyelaraskan dengan border-radius tombol */
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animasi transform dan box-shadow saat hover */
-}
-
-.download-btn button:hover::after {
-  transform: translateY(-2px); /* Menyesuaikan bayangan tambahan saat dihover */
-}
-
-.download-btn button:active::after {
-  transform: translateY(-4px); /* Menyesuaikan bayangan tambahan saat ditekan */
-}
-
 .cards-container {
   display: flex;
   flex-wrap: wrap;

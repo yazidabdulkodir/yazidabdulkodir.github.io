@@ -271,14 +271,6 @@ function playJamSound() {
   audio.play();
 }
 
-function playClickAndRedirect(button) {
-  var url = button.getAttribute("data-url");
-  playClickSound();
-  setTimeout(() => {
-    window.open(url, "_blank"); // Membuka URL di tab baru
-  }, 1000); // Beri jeda waktu untuk memutar suara sebelum mengarahkan
-}
-
 // Fungsi untuk memutar suara klik dan kemudian menjalankan fungsi changeCardContent
 function playClickAndChangeContent() {
   playJamSound();
