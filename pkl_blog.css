@@ -1,0 +1,124 @@
+::selection {
+  color: rgb(0, 0, 0);
+  background-color: #00bfff;
+}
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #dedede;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+  /* position: sticky;
+  top: 0; */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8em;
+  background-image: linear-gradient(to right, #ff4500, #ffc0cb, #00bfff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+main {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Image styling */
+.article-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+article h2 {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+article h3 {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+article p {
+  color: #333;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+footer {
+  background-color: #333;
+  color: #bcbcbc;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 0px;
+  font-size: 0.7em;
+}
+
+/* Button styling */
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+  background-color: rgb(51, 51, 51, 0.3);
+  color: rgb(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 50%;
+  width: 30px; /* Reduced width */
+  height: 30px; /* Reduced height */
+  font-size: 14px; /* Reduced font size */
+  text-align: center;
+  line-height: 30px; /* Match line height to height */
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease;
+}
+
+#back-to-top:hover {
+  background-color: #555;
+  color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  main {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  main {
+    padding: 10px;
+  }
+}

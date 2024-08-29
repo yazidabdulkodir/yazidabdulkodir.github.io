@@ -157,8 +157,8 @@ body {
 }
 
 #about p {
-  text-align: justify;
-  text-indent: 30px;
+  /* text-align: justify; */
+  /* text-indent: 30px; */
   /* mix-blend-mode: difference; */
   font-size: 0.9rem;
   color: rgb(0, 0, 0);
@@ -594,6 +594,10 @@ body.modal-open {
   margin-bottom: 20px; /* Menambahkan margin bawah antar card */
   height: auto; /* Tinggi tetap untuk setiap kartu */
   overflow: auto; /* Aktifkan overflow jika konten terlalu panjang */
+}
+
+.custom-card h5 {
+  font-weight: 600;
 }
 
 .custom-header {
