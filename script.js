@@ -350,7 +350,7 @@ const songsList = [
     artist: "Departure to the Front Lines",
     name: "Sawano Hiroyuki",
     src: "assets/Departure to the Front Lines.mp3",
-    cover: "assets/Departure.jpg",
+    cover: "assets/departure.jpg",
   },
 ];
 
