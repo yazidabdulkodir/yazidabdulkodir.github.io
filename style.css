@@ -164,11 +164,19 @@ body {
   color: rgb(0, 0, 0);
 }
 
+#music {
+  background-color: #9966cc;
+}
+
 #about h2,
 #gallery h2,
 #tweet h2,
 #times h2,
-#contact h2 {
+#contact h2,
+#music h2,
+#timelines .h2t,
+#gallery h2 {
+  margin-top: 100px;
   font-weight: 600;
   font-size: 1.5rem;
   font-style: italic;
@@ -196,7 +204,8 @@ body {
 #gallery h2 span,
 #tweet h2 span,
 #times h2 span,
-#contact h2 span {
+#contact h2 span,
+#music h2 span {
   color: brown;
 }
 
@@ -205,7 +214,7 @@ body {
 }
 
 #timelines p {
-  text-align: justify;
+  text-align: left;
 }
 
 #about p,
@@ -239,6 +248,136 @@ body {
 
 #footer {
   background-color: #1b263b;
+}
+
+.container-song {
+  position: relative;
+  width: fit-content; /* Mengatur lebar sesuai konten */
+  margin: 0 auto; /* Menjadikan container berada di tengah secara horizontal */
+}
+
+.container-song .song-info {
+  background-color: #000;
+  margin: 0 15px; /* Memindahkan elemen ke tengah secara horizontal */
+  padding: 15px 15px 5px 150px;
+  border-radius: 15px 15px 0 0;
+  max-width: 420.5px; /* atau ukuran yang sesuai */
+  width: 100%; /* Pastikan elemen mengambil 100% lebar yang diizinkan */
+}
+
+.container-song .song-info .song-name {
+  color: #b9b9b9;
+  font-size: 10px;
+  margin: 3px 0 20px;
+}
+
+.container-song .song-info .artist-name {
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.container-song .song-info .progress-bar {
+  background-color: #505050;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.container-song .song-info .progress-bar .fill-bar {
+  width: 0;
+  height: 6px;
+  border-radius: 20px;
+  background: #1db954;
+}
+
+.container-song .song-info .time {
+  font-size: 15px;
+  color: #b9b9b9;
+  margin: 10px 0;
+}
+
+.container-song .disk {
+  max-width: 120px;
+}
+
+.container-song .disk .active {
+  animation: rotate 3s linear 0s infinite forwards;
+}
+
+/* Gaya default */
+.container-song .disk .cover {
+  width: 145px;
+  height: 145px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: url("assets/loneliness.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 1s ease-in-out;
+}
+
+.container-song .disk .circle {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  left: 16%;
+  top: 31%;
+  background-color: #000000;
+  z-index: 1;
+  border-radius: 50%;
+  border: 2px #ffffff solid;
+}
+
+.container-song .controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #292929;
+  width: 450px;
+  height: 100px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.container-song .controls #play {
+  background-color: #1db954;
+  color: #fff;
+  padding: 15px 17px 15px 15px;
+  font-size: 25px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.container-song .controls #play:hover {
+  background: #189945;
+}
+
+.container-song .controls i {
+  padding: 30px 30px;
+  font-size: 35px;
+  cursor: pointer;
+  color: #919191;
+  transition: all 0.3s ease;
+}
+
+.container-song .controls i:hover {
+  color: #fff;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
 }
 
 .timeline {
@@ -928,5 +1067,106 @@ footer p {
 
   .custom-card {
     margin-bottom: 20px; /* Menambahkan margin bawah antar card pada tampilan mobile */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container-song {
+    transform: scale(1.2);
+    width: 380px; /* Lebar tetap */
+    max-width: 100%; /* Maksimal lebar 100% dari parent */
+    height: 200px; /* Tinggi tetap */
+    max-height: 100%;
+    padding: 10px; /* Contoh padding */
+    box-sizing: border-box; /* Pastikan padding dan border tidak menambah ukuran */
+    white-space: normal; /* Izinkan teks untuk membungkus ke baris berikutnya */
+  }
+  .container-song .song-info {
+    font-size: 0.9em; /* Sesuaikan ukuran font untuk mobile */
+    text-align: left; /* Pastikan konten tetap di tengah */
+    margin: 0 auto; /* Menjadikan container berada di tengah secara horizontal */
+  }
+  .container-song .controls {
+    width: 360px;
+    height: 80px;
+    border-radius: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .container-song .controls i {
+    padding: 24px 20px;
+    font-size: 28px;
+  }
+  .container-song .controls #play {
+    padding: 12px 14px;
+    font-size: 22px;
+  }
+  .container-song .disk .cover {
+    width: 120px;
+    height: 120px;
+    top: 14.5px; /* Adjust top position */
+    left: 28px; /* Adjust left position */
+  }
+
+  .container-song .disk .circle {
+    width: 23px;
+    height: 23px;
+    left: 20%;
+    top: 31%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container-song {
+    /* Adjust scale factor as needed */
+    transform: scale(0.8);
+    width: 350px; /* Lebar tetap */
+    max-width: 100%; /* Maksimal lebar 100% dari parent */
+    height: 200px; /* Tinggi tetap */
+    max-height: 100%;
+  }
+
+  .container-song .song-info {
+    font-size: 0.9em; /* Sesuaikan ukuran font untuk mobile */
+    text-align: left; /* Pastikan konten tetap di tengah */
+    margin: 0 auto; /* Menjadikan container berada di tengah secara horizontal */
+  }
+
+  .container-song .controls {
+    /* Adjust width and height as needed */
+    width: auto;
+    height: 60px;
+    max-height: 100%;
+    border-radius: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .container-song .controls i {
+    /* Adjust padding and font size as needed */
+    padding: 18px 15px;
+    font-size: 20px;
+  }
+
+  .container-song .controls #play {
+    /* Adjust padding and font size as needed */
+    padding: 10px 12px;
+    font-size: 18px;
+  }
+
+  .container-song .disk .cover {
+    /* Adjust dimensions and positioning as needed */
+    width: 120px;
+    height: 120px;
+    top: 14px;
+    left: 20px;
+  }
+
+  .container-song .disk .circle {
+    /* Adjust dimensions and positioning as needed */
+    width: 18px;
+    height: 18px;
+    left: 21%;
+    top: 33%;
   }
 }

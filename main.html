@@ -47,6 +47,9 @@
               <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#music">Music</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#timelines">Timeline</a>
             </li>
             <li class="nav-item">
@@ -108,13 +111,52 @@
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
-          fill="#82e0aa"
+          fill="#9966cc"
           fill-opacity="1"
           d="M0,64L40,69.3C80,75,160,85,240,112C320,139,400,181,480,165.3C560,149,640,75,720,69.3C800,64,880,128,960,138.7C1040,149,1120,107,1200,101.3C1280,96,1360,128,1400,144L1440,160L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
         ></path>
       </svg>
     </section>
     <!-- About end -->
+
+    <!-- music section -->
+    <section id="music">
+      <div class="container">
+        <div class="row text-center mb-3">
+          <div class="col">
+            <h2>Mini <span>Music</span></h2>
+          </div>
+        </div>
+          <div class="container-song">
+            <div class="song-info">
+              <div class="artist-name"></div>
+              <div class="song-name"></div>
+              <div class="progress-bar">
+                <div class="fill-bar"></div>
+              </div>
+              <div class="time">0:00 - 0:00</div>
+            </div>
+            <div class="disk">
+              <div class="circle"></div>
+              <div id="cover" class="cover"></div>
+            </div>
+            <div class="controls">
+              <i id="prev" class="prev-btn fa-solid fa-backward"></i>
+              <i id="play" class="play-btn fa-solid fa-play"></i>
+              <i id="next" class="next-btn fa-solid fa-forward"></i>
+            </div>
+          </div>
+      </div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path
+              fill="#82e0aa"
+              fill-opacity="1"
+              d="M0,192L30,192C60,192,120,192,180,202.7C240,213,300,235,360,240C420,245,480,235,540,213.3C600,192,660,160,720,160C780,160,840,192,900,213.3C960,235,1020,245,1080,234.7C1140,224,1200,192,1260,176C1320,160,1380,160,1410,160L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"
+            ></path>
+          </svg>
+    </section>
+
+    <!-- music section end -->
 
     <!-- timeline -->
     <section id="timelines">
@@ -685,9 +727,7 @@
     <audio id="alert-sound" src="audio/Blip Bleep.mp3"></audio>
     <audio id="sound-egg" src="audio/Double Knock.mp3"></audio>
     <audio id="sound-jam" src="audio/select.mp3"></audio>
-    <audio id="background-music" autoplay loop>
-      <source src="audio/sharou-superstar.mp3" type="audio/mp3" />
-    </audio>
+    
 
     <!-- Contact -->
     <section id="contact">
