@@ -171,7 +171,7 @@ body {
 #about h2,
 #gallery h2,
 #tweet h2,
-#times h2,
+#times .judul,
 #contact h2,
 #music h2,
 #timelines .h2t,
@@ -326,11 +326,24 @@ body {
   width: 23px;
   height: 23px;
   left: 16%;
-  top: 31%;
+  top: 31.5%;
   background-color: #000000;
   z-index: 1;
   border-radius: 50%;
-  border: 2px #ffffff solid;
+  /* border: 2px #ffffff solid; */
+  z-index: 9999999;
+}
+
+.container-song .disk .circle-2 {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  left: 14.4%;
+  top: 28%;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+  border-radius: 50%;
+  /* border: 2px rgb(255, 255, 255, 0.8) solid; */
 }
 
 .container-song .controls {
@@ -786,6 +799,10 @@ body.modal-open {
   font-style: normal;
 }
 
+.my-card #my-time {
+  font-size: 900;
+}
+
 .my-button {
   background-color: #198754;
   color: #fff;
@@ -985,7 +1002,8 @@ body.modal-open {
 
 footer p {
   font-size: 0.8rem;
-  color: white;
+  padding-top: 30px;
+  color: rgb(236, 236, 236);
 }
 
 /* footer a {
@@ -994,6 +1012,7 @@ footer p {
   columns: white;
   /* mix-blend-mode: difference; */
 /* } */
+
 */ section {
   padding-top: 5rem;
 }
@@ -1109,10 +1128,17 @@ footer p {
   }
 
   .container-song .disk .circle {
-    width: 23px;
-    height: 23px;
-    left: 20%;
-    top: 31%;
+    width: 20px;
+    height: 20px;
+    left: 20.5%;
+    top: 32%;
+  }
+
+  .container-song .disk .circle-2 {
+    width: 38px;
+    height: 38px;
+    left: 18.2%;
+    top: 27.5%;
   }
 }
 
@@ -1168,5 +1194,13 @@ footer p {
     height: 18px;
     left: 21%;
     top: 33%;
+  }
+
+  .container-song .disk .circle-2 {
+    /* Adjust dimensions and positioning as needed */
+    width: 26px;
+    height: 26px;
+    left: 20%;
+    top: 31%;
   }
 }
