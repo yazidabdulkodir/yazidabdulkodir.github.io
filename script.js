@@ -298,8 +298,8 @@ function createBubble(x, y) {
   bubble.classList.add("bubble");
 
   // Adjust position to center the bubble on the cursor
-  bubble.style.left = `${x - 20}px`;
-  bubble.style.top = `${y - 20}px`;
+  bubble.style.left = `${x - 25}px`;
+  bubble.style.top = `${y - 25}px`;
 
   document.body.appendChild(bubble);
 
