@@ -210,7 +210,7 @@ body {
 }
 
 #timelines h2 span {
-  color: rgb(255, 255, 255);
+  color: tomato;
 }
 
 #timelines p {
@@ -497,7 +497,7 @@ body {
   position: relative;
   display: flex;
   align-items: flex-end;
-  box-shadow: -10px 13px 3px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: -10px 13px 8px 0px rgba(0, 0, 0, 0.4);
   transition: 0.5s ease-in-out;
   margin: 0 15px 30px; /* Menambahkan margin bawah */
   border-radius: 5%;
@@ -511,7 +511,7 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.384), rgba(0, 0, 0, 0.699), rgb(0, 0, 0));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(0, 0, 0, 0.8), rgb(0, 0, 0));
   z-index: 2;
   transition: 0.5s all;
   opacity: 0;
@@ -556,8 +556,8 @@ body {
 
 .card .info h1 {
   margin: 0;
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .card .info p {
