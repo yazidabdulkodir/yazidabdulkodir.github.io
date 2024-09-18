@@ -341,6 +341,12 @@ document.addEventListener("DOMContentLoaded", function () {
 // miniMusic
 const songsList = [
   {
+    artist: "superstar",
+    name: "Sharou",
+    src: "assets/superstar.mp3",
+    cover: "assets/super.webp",
+  },
+  {
     artist: "Loneliness",
     name: "Toshiro Masuda",
     src: "assets/loneliness.mp3",
@@ -351,6 +357,18 @@ const songsList = [
     name: "Sawano Hiroyuki",
     src: "assets/Departure to the Front Lines.mp3",
     cover: "assets/departure.jpg",
+  },
+  {
+    artist: "3:03 PM",
+    name: "Sharou",
+    src: "assets/3_03 PM.mp3",
+    cover: "assets/303pm.webp",
+  },
+  {
+    artist: "2:23 AM",
+    name: "Sharou",
+    src: "assets/2_23 AM.mp3",
+    cover: "assets/sharou.webp",
   },
 ];
 

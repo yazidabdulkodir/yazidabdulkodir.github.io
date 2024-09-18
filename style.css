@@ -60,14 +60,23 @@ body {
   }
 }
 
+#navigasiBar {
+  background-color: rgba(55, 71, 79, 0.1); /* Transparansi untuk navbar */
+  backdrop-filter: blur(10px) contrast(0.8) saturate(1.5); /* Efek blur pixelated dengan kontras dan saturasi */
+  -webkit-backdrop-filter: blur(10px) contrast(0.8) saturate(1.5); /* Untuk browser WebKit (Safari) */
+  border-bottom: 1px rgba(55, 71, 79) solid;
+  transition: background-color 0.3s ease; /* Transisi halus */
+  z-index: 9999999999;
+}
+
 .navbar-brand {
   font-weight: 600;
   font-size: 1rem;
-  color: #5dade2;
+  color: red;
 }
 
 .navbar-brand:hover {
-  color: #5dade2;
+  color: red;
 }
 
 .navbar-brand span {
@@ -76,13 +85,9 @@ body {
   font-size: 1rem;
 }
 
-#navigasiBar {
-  background-color: #37474f;
-}
-
 #navbarNav ul li a {
-  color: white;
-  transition: color 0.3s ease; /* Tambahkan transisi untuk efek perubahan warna */
+  color: rgb(0, 0, 0);
+  transition: color 0.3s ease;
 }
 
 #navbarNav ul li a:hover,
@@ -92,13 +97,12 @@ body {
 
 .navbar {
   display: flex;
-  justify-content: center; /* Mengatur posisi menu navbar di tengah */
-  background-color: #333; /* Warna latar belakang navbar */
-  padding: 10px 0; /* Padding atas dan bawah */
+  justify-content: center;
+  padding: 10px 0;
 }
 
 .navbar-toggler {
-  border-color: #ffc107; /* Warna border tombol diubah menjadi kuning */
+  border-color: #ffc107;
 }
 
 .navbar-toggler-icon {
@@ -108,9 +112,9 @@ body {
 .nav-link {
   position: relative;
   text-decoration: none;
-  color: white;
-  padding: 10px 20px; /* Padding untuk ruang di sekitar teks */
-  transition: color 0.3s ease; /* Transisi untuk perubahan warna teks */
+  color: rgb(255, 0, 0);
+  padding: 10px 20px;
+  transition: color 0.3s ease;
 }
 
 .nav-link::after {
@@ -118,17 +122,17 @@ body {
   position: absolute;
   bottom: 9px;
   left: 50%;
-  transform: translateX(-50%) scaleX(0); /* Mulai dari tengah dan tidak ada lebar awal */
+  transform: translateX(-50%) scaleX(0);
   width: 0;
   height: 2px;
-  background-color: white;
-  transition: width 0.3s ease, transform 0.3s ease; /* Animasi lebar dan transformasi */
+  background-color: rgb(255, 0, 0);
+  transition: width 0.3s ease, transform 0.3s ease;
 }
 
 .nav-link:hover::after,
 .nav-link.active::after {
-  transform: translateX(-50%) scaleX(1); /* Memperluas garis dari tengah ke kiri dan kanan */
-  width: 100%; /* Penuh lebar saat selesai */
+  transform: translateX(-50%) scaleX(1);
+  width: 100%;
 }
 
 .jumbotron {
@@ -223,7 +227,7 @@ body {
 }
 
 #gallery {
-  background-color: #ffeb3b;
+  background-color: #d1c4e9;
 }
 
 #entertainment {

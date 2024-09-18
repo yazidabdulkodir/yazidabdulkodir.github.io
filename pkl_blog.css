@@ -29,7 +29,7 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 1.8em;
+  font-size: 1.5em;
   background-image: linear-gradient(to right, #ff4500, #ffc0cb, #00bfff);
   background-clip: text;
   -webkit-background-clip: text;
@@ -78,7 +78,7 @@ footer {
   bottom: 0;
   width: 100%;
   margin-top: 0px;
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
 
 /* Button styling */
@@ -115,10 +115,22 @@ footer {
 
 @media (max-width: 480px) {
   header h1 {
-    font-size: 1.5em;
+    font-size: 0.7em;
   }
 
   main {
     padding: 10px;
+  }
+
+  h2 {
+    font-size: 0.9em;
+  }
+
+  h3 {
+    font-size: 0.8em;
+  }
+
+  p {
+    font-size: 0.7em;
   }
 }
